@@ -1,0 +1,33 @@
+﻿@page "{handler?}"
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Notes</h1>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var note in Model.Notes)
+            {
+                <tr>
+                    <td>@note.Title</td>
+                    <td>@note.Body</td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@note.Id">edit</a>
+                        <button type="submit" asp-page-handler="delete"
+                                asp-route-id="@note.Id">delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-page="./Create">Create</a>
+</form>

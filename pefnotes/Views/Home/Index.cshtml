@@ -1,0 +1,32 @@
+﻿@model NotesViewModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Notes</h1>
+<form method="post">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var note in Model.Notes)
+            {
+                <tr>
+                    <td>@note.Title</td>
+                    <td>@note.Body</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@note.Id">edit</a>
+                        <button type="submit" asp-controller="Home" asp-action="Delete"
+                                asp-route-id="@note.Id">delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="Home" asp-action="Create">Create</a>
+</form>

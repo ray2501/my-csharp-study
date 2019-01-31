@@ -1,0 +1,27 @@
+@page "{id:Guid}"
+@model EditModel
+@{
+    ViewData["Title"] = "Edit a Note";
+}
+<h1>Notes</h1>
+<p>
+    Enter Title and Body.
+</p>
+<h1>Edit Note - note.Id</h1>
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="note.Id" type="hidden" />
+    <div>
+        <label asp-for="note.Title"></label>
+        <div>
+            <input asp-for="note.Title" />
+            <span asp-validation-for="note.Title" ></span>
+        </div>
+        <label asp-for="note.Body"></label>
+        <div><textarea  rows="5" cols="70" asp-for="note.Body"></textarea></div>
+    </div>
+    <br>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>

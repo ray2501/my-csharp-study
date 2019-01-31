@@ -1,0 +1,26 @@
+@model Note
+@{
+    ViewData["Title"] = "Edit a Note";
+}
+<h1>Notes</h1>
+<p>
+    Enter Title and Body.
+</p>
+<h1>Edit Note - @Model.Id</h1>
+<form asp-controller="Home" asp-action="EditNote" method="post">
+    <div asp-validation-summary="All"></div>
+    <input asp-for=@Model.Id type="hidden" />
+    <div>
+        <label asp-for=@Model.Title></label>
+        <div>
+            <input asp-for="Title" />
+            <span asp-validation-for="Title" ></span>
+        </div>
+        <label asp-for=@Model.Body></label>
+        <div><textarea  rows="5" cols="70" asp-for="Body"></textarea></div>
+    </div>
+    <br>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>

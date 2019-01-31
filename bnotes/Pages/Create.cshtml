@@ -1,0 +1,18 @@
+@page
+@model CreateModel
+@{
+    ViewData["Title"] = "Create a Note";
+}
+<h1>Notes</h1>
+<p>
+    Enter Title and Body.
+</p>
+<div asp-validation-summary="All"></div>
+<form method="POST">
+    <label asp-for="note.Title"></label>
+    <div><input asp-for="note.Title" /></div>
+    <label asp-for="note.Body"></label>
+    <div><textarea  rows="5" cols="70" asp-for="note.Body"></textarea></div>
+    <br>
+    <input type="submit" value="Submit" />
+</form>
