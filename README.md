@@ -1,24 +1,24 @@
 my-csharp-study
 =====
 
-#bnotes
+# bnotes
 BaseX/XmlSerializer test for ASP.NET core 
 
-#dodbc
+# dodbc
 Dapper and System.Data.Odbc test 
 
-#markdownmiddleware
+# markdownmiddleware
 Asp.net core middleware test for Markdown documents 
 
-#NancyApplication
+# NancyApplication
 Nancy and ASP.NET core test 
 
-#pefnotes
+# pefnotes
 Test for ASP.NET core MVC and EF core
 
-#pnotes
+# pnotes
 Dapper test for ASP.NET core
 
-#rxgtksharp
+# rxgtksharp
 Test app for GtkSharp and Rx.NET 
 
