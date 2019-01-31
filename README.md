@@ -22,3 +22,6 @@ Dapper test for ASP.NET core
 # rxgtksharp
 Test app for GtkSharp and Rx.NET 
 
+# UploadServer
+Upload file test for ASP.NET Core
+
