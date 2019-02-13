@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="Dapper" Version="1.50.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="NLog" Version="4.5.11" />
     <PackageReference Include="NLog.config" Version="4.5.11" />
