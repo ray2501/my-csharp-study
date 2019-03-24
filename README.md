@@ -5,7 +5,10 @@ my-csharp-study
 BaseX/XmlSerializer test for ASP.NET core 
 
 # dodbc
-Dapper and System.Data.Odbc test 
+Dapper and System.Data.Odbc test
+
+# Iris
+ML.NET test (Iris clustering)
 
 # markdownmiddleware
 Asp.net core middleware test for Markdown documents 
