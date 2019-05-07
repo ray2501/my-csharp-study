@@ -1,5 +1,4 @@
-﻿using Microsoft.Data.DataView;
-using Microsoft.ML;
+﻿using Microsoft.ML;
 using Microsoft.ML.Data;
 using System;
 
@@ -31,11 +30,13 @@ namespace Iris
             public string Label;
         }
 
-        // IrisPrediction is the result returned from prediction operations
-        public class IrisPrediction
+        public class ClusterPrediction
         {
             [ColumnName("PredictedLabel")]
-            public string PredictedLabels;
+            public uint PredictedClusterId;
+
+            [ColumnName("Score")]
+            public float[] Distances;
         }
 
         static void Main(string[] args)
@@ -52,17 +53,19 @@ namespace Iris
             // numbers can be processed during model training.
             // Add a learning algorithm to the pipeline. e.g.(What type of iris is this?)
             // Convert the Label back into original text (after converting to number in step 3)
-            var pipeline = mlContext.Transforms.Conversion.MapValueToKey("Label")
-                .Append(mlContext.Transforms.Concatenate("Features", "SepalLength", "SepalWidth", "PetalLength", "PetalWidth"))
-                .Append(mlContext.MulticlassClassification.Trainers.StochasticDualCoordinateAscent(labelColumnName: DefaultColumnNames.Label, featureColumnName: DefaultColumnNames.Features))
-                .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+
+            string featuresColumnName = "Features";
+            var pipeline = mlContext.Transforms
+                .Concatenate(featuresColumnName, "SepalLength", "SepalWidth", "PetalLength", "PetalWidth")
+                .Append(mlContext.Clustering.Trainers.KMeans(featuresColumnName, numberOfClusters: 3));
 
             // STEP 4: Train your model based on the data set
             var model = pipeline.Fit(trainingDataView);
 
             // STEP 5: Use your model to make a prediction
             // You can change these numbers to test different predictions
-            var prediction = model.CreatePredictionEngine<IrisData, IrisPrediction>(mlContext).Predict(
+            var predictor = mlContext.Model.CreatePredictionEngine<IrisData, ClusterPrediction>(model);
+            var prediction = predictor.Predict(
                 new IrisData()
                 {
                     SepalLength = 3.3f,
@@ -71,7 +74,8 @@ namespace Iris
                     PetalWidth = 1.1f,
                 });
 
-            Console.WriteLine($"Predicted flower type is: {prediction.PredictedLabels}");
+            Console.WriteLine($"Cluster: {prediction.PredictedClusterId}");
+            Console.WriteLine($"Distances: {string.Join(" ", prediction.Distances)}");
         }
     }
 }
