@@ -49,10 +49,6 @@ namespace Iris
             IDataView trainingDataView = mlContext.Data.LoadFromTextFile<IrisData>(path: "iris-data.txt", hasHeader: false, separatorChar: ',');
 
             // STEP 3: Transform your data and add a learner
-            // Assign numeric values to text in the "Label" column, because only
-            // numbers can be processed during model training.
-            // Add a learning algorithm to the pipeline. e.g.(What type of iris is this?)
-            // Convert the Label back into original text (after converting to number in step 3)
 
             string featuresColumnName = "Features";
             var pipeline = mlContext.Transforms
