@@ -1,6 +1,9 @@
 my-csharp-study
 =====
 
+# multiplication
+multiplication table, for LINQ test
+
 # bnotes
 BaseX/XmlSerializer test for ASP.NET core 
 
