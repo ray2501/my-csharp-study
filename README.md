@@ -1,9 +1,6 @@
 my-csharp-study
 =====
 
-# multiplication
-multiplication table, for LINQ test
-
 # bnotes
 BaseX/XmlSerializer test for ASP.NET core 
 
@@ -18,6 +15,9 @@ Asp.net core middleware test for Markdown documents
 
 # NancyApplication
 Nancy and ASP.NET core test 
+
+# multiplication
+multiplication table, for LINQ test
 
 # pefnotes
 Test for ASP.NET core MVC and EF core
