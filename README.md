@@ -13,11 +13,11 @@ ML.NET test (Iris clustering)
 # markdownmiddleware
 Asp.net core middleware test for Markdown documents 
 
-# NancyApplication
-Nancy and ASP.NET core test 
-
 # multiplication
 multiplication table, for LINQ test
+
+# NancyApplication
+Nancy and ASP.NET core test 
 
 # pefnotes
 Test for ASP.NET core MVC and EF core
