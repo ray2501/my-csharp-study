@@ -1,3 +1,4 @@
+using EasyCaching.Core;
 using EasyCaching.InMemory;
 using EasyCaching.ResponseCaching;
 using System;
@@ -46,8 +47,8 @@ namespace aspnetcoreapp
                 options.HttpsPort = 5001;
             });
 
-            services.AddEasyCachingResponseCaching();
-            services.AddDefaultInMemoryCache();
+            services.AddEasyCaching(x => { x.UseInMemory(); });
+            services.AddEasyCachingResponseCaching(EasyCachingConstValue.DefaultInMemoryName);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
