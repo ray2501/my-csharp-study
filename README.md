@@ -7,6 +7,9 @@ BaseX/XmlSerializer test for ASP.NET core
 # dodbc
 Dapper and System.Data.Odbc test
 
+# drawing
+System.Drawing.Common test (required libgdiplus).
+
 # Iris
 ML.NET test (Iris clustering)
 
