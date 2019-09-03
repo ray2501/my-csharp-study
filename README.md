@@ -1,6 +1,9 @@
 my-csharp-study
 =====
 
+# HelloMain
+Async Main test
+
 # bnotes
 BaseX/XmlSerializer test for ASP.NET core 
 
