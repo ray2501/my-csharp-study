@@ -4,6 +4,9 @@ my-csharp-study
 # HelloMain
 Async Main test
 
+# consoledi
+Dependency Injection and Configuration test
+
 # bnotes
 BaseX/XmlSerializer test for ASP.NET core 
 
