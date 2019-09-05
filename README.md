@@ -7,6 +7,9 @@ Async Main test
 # consoledi
 Dependency Injection and Configuration test
 
+# staticfiles
+ASP.NET core Static Files test
+
 # bnotes
 BaseX/XmlSerializer test for ASP.NET core 
 
