@@ -10,8 +10,8 @@ namespace homepage
     {
         readonly RequestDelegate _next;
 
-        readonly IHostingEnvironment _env;
-        public MarkdownPage(RequestDelegate next, IHostingEnvironment env)
+        readonly IWebHostEnvironment _env;
+        public MarkdownPage(RequestDelegate next, IWebHostEnvironment env)
         {
             _next = next;
             _env = env;
