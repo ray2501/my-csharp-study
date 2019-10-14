@@ -1,6 +1,6 @@
 ﻿using System.IO;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
 namespace NancyApplication
 {
@@ -8,13 +8,16 @@ namespace NancyApplication
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseKestrel()
-                .UseStartup<Startup>()
-                .Build();
-
-            host.Run();
+            Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.ConfigureKestrel(serverOptions =>
+                {
+                    serverOptions.AllowSynchronousIO = true;
+                })
+                .UseStartup<Startup>();
+            })
+            .Build().Run();
         }
     }
 }
