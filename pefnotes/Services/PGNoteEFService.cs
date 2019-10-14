@@ -1,7 +1,5 @@
 using System;
-using System.Data;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using pefnotes.Models;
