@@ -43,3 +43,6 @@ Test app for GtkSharp and Rx.NET
 # UploadServer
 Upload file test for ASP.NET Core
 
+# mySparkApp
+Test app for .NET for Apache Spark
+
