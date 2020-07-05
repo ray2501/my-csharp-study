@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="GtkSharp" Version="3.22.25.74" />
+    <PackageReference Include="GtkSharp" Version="3.22.25.98" />
     <PackageReference Include="System.Reactive" Version="4.4.1" />
   </ItemGroup>
 
